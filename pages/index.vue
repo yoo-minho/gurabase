@@ -23,6 +23,10 @@ const moveDataPage = (rest: string, schema: string) => {
     loading.value = true;
     navigateTo({ path: '/data', query: { rest, schema } })
 }
+
+const moveGemini = () => navigateTo('https://gemini.google.com/', { open: { target: 'gemini' } })
+const moveFirebase = () => navigateTo('https://firebase.google.com/', { open: { target: 'firebase' } })
+const moveJocoding = () => navigateTo('https://www.youtube.com/@jocoding', { open: { target: 'jocoding' } })
 </script>
 
 <template>
@@ -48,10 +52,16 @@ const moveDataPage = (rest: string, schema: string) => {
             </div>
         </div>
 
-        <footer class="mt-10 flex flex-col items-center gap-1">
-            <p>Powered by <span class="text-blue-500">Gemini</span>, Firebase, Nuxt.js, and Jocoding</p>
+        <div class="mt-10 flex flex-col items-center gap-1">
+            <p>
+                Powered by
+                <span class="text-blue-500 underline cursor-pointer" @click="moveGemini()">Gemini</span>,
+                <span class="underline cursor-pointer" @click="moveFirebase()">Firebase</span>,
+                and
+                <span class="underline cursor-pointer" @click="moveJocoding()">Jocoding</span>
+            </p>
             <p>&copy; 2024 Gurabase. All rights reserved.</p>
-        </footer>
+        </div>
     </div>
 </template>
 

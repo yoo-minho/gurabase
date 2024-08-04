@@ -3,7 +3,12 @@ export default defineEventHandler(async (event) => {
 
   const { schema } = getQuery(event);
 
-  const apiUrl = new URL(`http://localhost:3000/api/data`);
+  const { req } = event.node;
+  const protocol = req.headers["x-forwarded-proto"] || "http";
+  const host = req.headers["x-forwarded-host"] || req.headers.host;
+  const baseUrl = `${protocol}://${host}`;
+
+  const apiUrl = new URL(`${baseUrl}/api/data`);
   apiUrl.search = new URLSearchParams({
     schema: String(schema),
   }).toString();
