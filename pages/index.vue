@@ -28,7 +28,7 @@ const moveDataPage = (rest: string, schema: string) => {
 <template>
     <div class="w-full flex flex-col items-center gap-3">
         <div class="logo">Gurabase</div>
-        <p class="slogan">Gemini와 함께 창의적인 데이터를 손쉽게 만들어 보세요</p>
+        <p class="slogan">Gemini와 함께 창의적인 데이터를 손쉽게 만들어 보세요!</p>
         <p class="slogan2">어떤 서비스 혹은 기능을 만들 예정이신가요?</p>
         <UInput class="w-full" v-model="prompt" size="xl" @keydown.enter="moveModelPage()" autofocus :maxlength="50"
             placeholder="어떤 언어로든 작성 가능합니다." />
