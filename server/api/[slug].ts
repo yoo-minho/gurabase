@@ -1,7 +1,7 @@
 export default defineEventHandler(async (event) => {
   const slug = getRouterParam(event, "slug");
 
-  const { schema } = getQuery(event);
+  const query = getQuery(event);
 
   const { req } = event.node;
   const protocol = req.headers["x-forwarded-proto"] || "http";
@@ -10,7 +10,8 @@ export default defineEventHandler(async (event) => {
 
   const apiUrl = new URL(`${baseUrl}/api/data`);
   apiUrl.search = new URLSearchParams({
-    schema: String(schema),
+    schema: String(query.schema),
+    ...query,
   }).toString();
 
   try {

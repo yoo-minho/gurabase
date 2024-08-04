@@ -23,7 +23,8 @@ const generationConfig = {
 } as any;
 
 export default defineEventHandler(async (event) => {
-  const { schema } = getQuery(event);
+  const query = getQuery(event);
+  const { schema, per_page = 4, lang = "ko" } = query;
   if (!schema) {
     return { error: true, message: "Schema empty!" };
   }
@@ -38,7 +39,10 @@ export default defineEventHandler(async (event) => {
   }
 
   const input = [
-    `"${fireStoreData.schema}" JsonSchema 가지고 4개 데이터를 랜덤으로 생성해줘!`,
+    `"${fireStoreData.schema}" JsonSchema 가지고 아래의 조건에 맞춰 ${per_page}개 데이터를 랜덤으로 생성해줘!`,
+    `-조건1. id는 10,000번 이내로 설정해줘!`,
+    `-조건2. 최대한 실제로 있을법한 데이터를 만들어줘!`,
+    `-조건3. 값은 "${lang}" ISO 639-1 표준 언어코드에 맞게 만들어줘!`,
   ].join("\n");
 
   const chatSession = model.startChat({

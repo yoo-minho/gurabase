@@ -43,7 +43,7 @@ const moveDataPage = async () => {
     <div class="w-full h-dvh flex flex-col gap-3">
         <div class="mt-3">
             <div class="logo sm">/{{ rest }}</div>
-            <div class="slogan">{{ prompt }}</div>
+            <div class="slogan2">{{ prompt }}</div>
         </div>
         <UButton class="submit" :loading="loading" @click="moveDataPage">Generate</UButton>
         <div class="flex-1 ">

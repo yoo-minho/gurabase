@@ -24,18 +24,18 @@ body {
 }
 
 .logo {
-  letter-spacing: -0.1rem;
-  font-size: 72px;
-  line-height: 84px;
-  word-break: break-word;
-  width: fit-content;
+  letter-spacing: -4px;
+  font-size: 84px;
+  line-height: 96px;
   font-weight: bold;
   background: linear-gradient(90deg, #3c82f6, #c86fc9);
   -webkit-background-clip: text;
   color: transparent;
+  width: fit-content;
 }
 
 .logo.sm {
+  letter-spacing: -0.05em;
   font-size: 28px;
   line-height: 32px;
 }
@@ -43,19 +43,19 @@ body {
 .slogan {
   font-size: 28px;
   line-height: 32px;
-  font-weight: 500;
-  letter-spacing: -1px;
+  letter-spacing: -0.5px;
 }
 
 .slogan2 {
-  color: rgb(31, 31, 31);
-  font-size: 17px;
-  font-weight: 400;
-  line-height: 26.5px;
+  font-size: 16px;
+  line-height: 20px;
+  opacity: 0.7;
+  letter-spacing: -0.5px;
 }
 
 .submit {
   font-size: 16px;
+  font-weight: bold;
   justify-content: center;
   background: #1a73e8;
   box-shadow: 0 1px 3px 0 rgba(60, 64, 67, .3), 0 4px 8px 3px rgba(60, 64, 67, .15);

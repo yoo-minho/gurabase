@@ -42,8 +42,9 @@ export default defineEventHandler(async (event) => {
   let _prompt = decodeURIComponent(String(prompt));
 
   const input = [
-    `"${_prompt}" 관련한 간단한 서비스를 만들려고해. 그 때 스텝에 맞춰 포맷을 생성해줘!`,
-    `step 1. create REST API Name! (max 2 keyword, ex. "posts", "users", "todos")`,
+    // `"${_prompt}" 관련한 간단한 서비스를 만들려고해. 그 때 스텝에 맞춰 포맷을 생성해줘!`,
+    `I'm trying to create a simple service related to "${_prompt}". Then create a format according to the steps!`,
+    `step 1. create REST API Name plural! (max 2 keyword, ex. "posts", "users", "todos", "order-items")`,
     `step 2. create json schema By https://json-schema.org/draft/2020-12/schema!`,
     `step 3. create "Type" of typescript! (No Interface, Write “JSDoc” above the declared Code)`,
     `step 4. create Dto of java! (Omit Getter/Setter, Write “JavaDoc” in detail above the declared Code)`,
